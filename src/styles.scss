@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@include mat-core();
+
+$app-primary: mat-palette($mat-lime-palette, A200);
+$app-accent: mat-palette($mat-deep-orange-palette, 900);
+$app-warn: mat-palette($mat-red-palette, 500);
+$app-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
+
+@include angular-material-theme($app-theme);
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+  color: black;
+}
+
+body {
+  margin: 0;
+  background-color: #c9cccb;
+}

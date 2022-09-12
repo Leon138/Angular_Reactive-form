@@ -1,0 +1,12 @@
+<div class="TodoListHeader">ToDoList</div>
+
+<div class="ToDoListForm">
+  <app-reactive-form (itemForm)="addItemForm($event)"></app-reactive-form>
+</div>
+
+<div class="ToDoListItem">
+  <div class="ToDoListItem__WeekDay" *ngFor="let day of weekDays">
+    {{ day.value }}
+    <app-item *ngFor="let item of day.arrTask" [objItem]="item"> </app-item>
+  </div>
+</div>

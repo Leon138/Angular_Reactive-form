@@ -1,0 +1,19 @@
+.Form__Item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 120px;
+  height: 81px;
+  padding: 5px 5px 0px 5px;
+  background-color: #aeca96;
+  margin: 10px 0px 10px;
+  text-align: center;
+  font-size: 17px;
+  border-radius: 10px;
+  border: 1px solid black;
+
+  &__Task {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,79 @@
+<form [formGroup]="myForm">
+  <!-- <input type="text" placeholder="Название задания" formControlName="task" /> -->
+
+  <mat-form-field class="example-full-width">
+    <input class="Input_Task" matInput placeholder="Task name" formControlName="task" />
+  </mat-form-field>
+
+  <!-- <select name="Тип задания" id="" formControlName="taskType">
+    <option disabled selected>{{ labels.types }}</option>
+    <option *ngFor="let item of taskTypes" [value]="item.id">
+      {{ item.value }}
+    </option>
+  </select> -->
+
+  <mat-form-field>
+    <mat-label>Тип задания</mat-label>
+    <mat-select formControlName="taskType" required>
+      <mat-option>--</mat-option>
+      <mat-option *ngFor="let item of taskTypes" [value]="item.id">
+        {{ item.value }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="myForm.hasError('required')">!!!!!!!!!!!!!!!!!!!!!!</mat-error>
+    <mat-hint>{{ myForm.value?.value }}</mat-hint>
+  </mat-form-field>
+
+  <!-- <select name="Статус задания" id="" formControlName="taskStatus">
+    <option disabled selected>{{ labels.status }}</option>
+    <option *ngFor="let item of taskStatus" [value]="item.id">
+      {{ item.value }}
+    </option>
+  </select> -->
+
+  <mat-form-field>
+    <mat-label>Статус задания</mat-label>
+    <mat-select formControlName="taskStatus" required>
+      <mat-option>--</mat-option>
+      <mat-option *ngFor="let item of taskStatus" [value]="item.id">
+        {{ item.value }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="myForm.hasError('required')">!!!!!!!!!!!!!!!!!!!!!!</mat-error>
+    <mat-hint>{{ myForm.value?.value }}</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="date" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <!-- <input class="input_date" type="date" formControlName="date" /> -->
+
+  <button [disabled]="!isFormValid" (click)="submit()">Отправить</button>
+</form>
+
+<!-- <mat-form-field>
+  <mat-label>Тип задания</mat-label>
+  <mat-select formControlName="taskType" required>
+    <mat-option>--</mat-option>
+    <mat-option *ngFor="let item of taskTypes" [value]="item.id">
+      {{ item.value }}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="myForm.hasError('required')">!!!!!!!!!!!!!!!!!!!!!!</mat-error>
+  <mat-hint>{{ myForm.value?.value }}</mat-hint>
+</mat-form-field> -->
+
+<!-- <mat-form-field>
+  <mat-label>Статус задания</mat-label>
+  <mat-select formControlName="taskStatus" required>
+    <mat-option>--</mat-option>
+    <mat-option *ngFor="let item of taskStatus" [value]="item.id">
+      {{ item.value }}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="myForm.hasError('required')">!!!!!!!!!!!!!!!!!!!!!!</mat-error>
+  <mat-hint>{{ myForm.value?.value }}</mat-hint>
+</mat-form-field> -->
